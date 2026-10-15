@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fish-suika のゲーム置き場</title>
+<meta name="description" content="fish-suika が作った小さなブラウザゲームの置き場です。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap"><h1 class="site-title"><a href="index.html">fish-suika のゲーム置き場</a></h1></div>
+</header>
+<main class="wrap">
+  <section class="intro">
+    <h2>ようこそ</h2>
+    <p class="lead" data-wrap>fish-suika が作った小さなブラウザゲームを置いています。インストール不要で、気になるものを気軽に遊んでみてください。</p>
+  </section>
+  <ul class="grid" id="list" aria-label="ゲーム一覧"></ul>
+  <div class="empty" id="empty" hidden>まだ作品がありません。公開までもう少しお待ちください。</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="footer-links">
+      <li><a href="terms.html">利用上の注意</a></li>
+      <li><a href="license.html">著作権・ライセンス</a></li>
+      <li><a href="privacy.html">プライバシーについて</a></li>
+    </ul>
+    <p class="copy">&copy; 2026 fish-suika</p>
+  </div>
+</footer>
+<script src="games.js"></script>
+<script src="common.js"></script>
+<script>
+(function () {
+  "use strict";
+  var list = document.getElementById("list");
+  var empty = document.getElementById("empty");
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function placeholder(title) {
+    var ph = el("div", "thumb-ph");
+    ph.appendChild(el("span", "", title));
+    return ph;
+  }
+
+  function thumb(g) {
+    var box = el("div", "thumb-box");
+    var src = window.safeUrl(g.thumbnail);
+    if (!src) { box.appendChild(placeholder(g.title)); return box; }
+    var img = el("img", "thumb");
+    img.alt = g.title + "のサムネイル";
+    img.loading = "lazy";
+    img.onerror = function () {
+      img.onerror = null;
+      if (img.parentNode) img.parentNode.replaceChild(placeholder(g.title), img);
+    };
+    img.src = src;
+    box.appendChild(img);
+    return box;
+  }
+
+  function playButton(g) {
+    var url = window.safeUrl(g.url);
+    if (!url) {
+      var b = el("button", "btn", "準備中");
+      b.type = "button";
+      b.disabled = true;
+      return b;
+    }
+    var a = el("a", "btn", "遊ぶ");
+    if (g.mode === "external") {
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.setAttribute("aria-label", g.title + "を新しいタブで遊ぶ");
+    } else {
+      a.href = "play.html?id=" + encodeURIComponent(g.id);
+      a.setAttribute("aria-label", g.title + "を遊ぶ");
+    }
+    return a;
+  }
+
+  function card(g) {
+    var li = el("li", "card");
+    li.appendChild(thumb(g));
+    var body = el("div", "card-body");
+    var h = el("h3", "card-title", String(g.title || "（無題）"));
+    h.title = h.textContent;
+    body.appendChild(h);
+    body.appendChild(el("span", "genre", String(g.genre || "")));
+    var d = el("p", "desc");
+    d.appendChild(window.wrapPhrases(g.description || ""));
+    body.appendChild(d);
+    body.appendChild(playButton(g));
+    li.appendChild(body);
+    return li;
+  }
+
+  try {
+    var games = window.getGames().filter(function (g) { return g && typeof g === "object"; });
+    if (!games.length) throw new Error("empty");
+    games.forEach(function (g) { list.appendChild(card(g)); });
+  } catch (e) {
+    list.hidden = true;
+    empty.hidden = false;
+  }
+})();
+</script>
+</body>
+</html>

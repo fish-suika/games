@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>遊ぶ - fish-suika のゲーム置き場</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="play">
+<header class="playbar">
+  <a class="back tool" href="index.html">&larr; 一覧へ</a>
+  <h1 class="play-title" id="ptitle">読み込み中…</h1>
+  <a class="tool" id="newtab" href="#" target="_blank" rel="noopener noreferrer" hidden>新しいタブで開く</a>
+  <button class="tool" id="fs" type="button" hidden>全画面</button>
+</header>
+<div class="fallback" id="fallback" hidden>うまく表示されない場合は<a id="fallbackLink" href="#" target="_blank" rel="noopener noreferrer">新しいタブで開く</a></div>
+<div class="message" id="msg" hidden>
+  <p id="msgText"></p>
+  <p><a class="btn" href="index.html">一覧へ戻る</a></p>
+</div>
+<div class="stage" id="stage" hidden>
+  <iframe id="frame" title="ゲーム" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
+</div>
+<script src="games.js"></script>
+<script src="common.js"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+
+  function showMessage(text) {
+    $("ptitle").textContent = "表示できません";
+    $("msgText").textContent = "";
+    $("msgText").appendChild(window.wrapPhrases(text));
+    $("msg").hidden = false;
+  }
+
+  var id = new URLSearchParams(location.search).get("id");
+  var game = null;
+  if (id) {
+    window.getGames().forEach(function (g) { if (!game && g && g.id === id) game = g; });
+  }
+  if (!id || !game) {
+    showMessage("指定されたゲームが見つかりませんでした。一覧から選び直してください。");
+    return;
+  }
+  var url = window.safeUrl(game.url);
+  if (!url) {
+    $("ptitle").textContent = String(game.title || "");
+    showMessage("このゲームは準備中です。公開までもう少しお待ちください。");
+    return;
+  }
+
+  document.title = game.title + " - fish-suika のゲーム置き場";
+  $("ptitle").textContent = game.title;
+  $("ptitle").title = game.title;
+  [$("newtab"), $("fallbackLink")].forEach(function (a) { a.href = url; });
+  $("newtab").hidden = false;
+  $("fallback").hidden = false;
+  $("stage").hidden = false;
+
+  var frame = $("frame");
+  frame.title = game.title;
+  var timer = setTimeout(function () { $("fallback").classList.add("warn"); }, 8000);
+  frame.addEventListener("load", function () {
+    clearTimeout(timer);
+    try { // 同一オリジンで中身が 404 っぽいときだけ検出（簡易）
+      var t = (frame.contentDocument && frame.contentDocument.title) || "";
+      if (/404|not found/i.test(t)) $("fallback").classList.add("warn");
+    } catch (e) { /* 別オリジン等は無視 */ }
+  });
+  frame.src = url;
+
+  var stage = $("stage");
+  if (stage.requestFullscreen || stage.webkitRequestFullscreen) {
+    $("fs").hidden = false;
+    $("fs").addEventListener("click", function () {
+      var req = stage.requestFullscreen || stage.webkitRequestFullscreen;
+      try { var p = req.call(stage); if (p && p.catch) p.catch(function () {}); } catch (e) {}
+    });
+  }
+})();
+</script>
+</body>
+</html>
