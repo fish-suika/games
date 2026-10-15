@@ -81,7 +81,7 @@
       a.rel = "noopener noreferrer";
       a.setAttribute("aria-label", g.title + "を新しいタブで遊ぶ");
     } else {
-      a.href = "play.html?id=" + encodeURIComponent(g.id);
+      a.href = url; // 上にバーを出さず、ゲームを画面いっぱいに使えるよう同じタブで直接開く
       a.setAttribute("aria-label", g.title + "を遊ぶ");
     }
     return a;

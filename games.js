@@ -11,7 +11,7 @@
     description: "ゲームの短い説明。",
     thumbnail: "thumbs/mygame.svg",   // 省略可
     url: "games/mygame/index.html",   // 相対パス or https://... 。空 "" だと「準備中」表示
-    mode: "embed"                     // "embed"=サイト内(play.html)で表示 / "external"=新しいタブで直接開く。省略時 embed
+    mode: "embed"                     // "embed"=同じタブでゲームを直接開く / "external"=新しいタブで開く。省略時 embed
   },
 
   ※ url は http(s) か相対パスのみ有効です（それ以外は準備中扱い）。

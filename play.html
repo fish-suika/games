@@ -10,16 +10,10 @@
 <header class="playbar">
   <a class="back tool" href="index.html">&larr; 一覧へ</a>
   <h1 class="play-title" id="ptitle">読み込み中…</h1>
-  <a class="tool" id="newtab" href="#" target="_blank" rel="noopener noreferrer" hidden>新しいタブで開く</a>
-  <button class="tool" id="fs" type="button" hidden>全画面</button>
 </header>
-<div class="fallback" id="fallback" hidden>うまく表示されない場合は<a id="fallbackLink" href="#" target="_blank" rel="noopener noreferrer">新しいタブで開く</a></div>
 <div class="message" id="msg" hidden>
   <p id="msgText"></p>
   <p><a class="btn" href="index.html">一覧へ戻る</a></p>
-</div>
-<div class="stage" id="stage" hidden>
-  <iframe id="frame" title="ゲーム" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
 </div>
 <script src="games.js"></script>
 <script src="common.js"></script>
@@ -51,35 +45,8 @@
     return;
   }
 
-  document.title = game.title + " - おさかな～のゲーム置き場";
-  $("ptitle").textContent = game.title;
-  $("ptitle").title = game.title;
-  [$("newtab"), $("fallbackLink")].forEach(function (a) { a.href = url; });
-  $("newtab").hidden = false;
-  $("fallback").hidden = false;
-  $("stage").hidden = false;
-
-  var frame = $("frame");
-  frame.title = game.title;
-  var timer = setTimeout(function () { $("fallback").classList.add("warn"); }, 8000);
-  frame.addEventListener("load", function () {
-    clearTimeout(timer);
-    try { frame.contentWindow.focus(); } catch (e) {} // キーボード操作のゲームがすぐ反応するように
-    try { // 同一オリジンで中身が 404 っぽいときだけ検出（簡易）
-      var t = (frame.contentDocument && frame.contentDocument.title) || "";
-      if (/404|not found|error response|見つかりません/i.test(t)) $("fallback").classList.add("warn");
-    } catch (e) { /* 別オリジン等は無視 */ }
-  });
-  frame.src = url;
-
-  var stage = $("stage");
-  if (stage.requestFullscreen || stage.webkitRequestFullscreen) {
-    $("fs").hidden = false;
-    $("fs").addEventListener("click", function () {
-      var req = stage.requestFullscreen || stage.webkitRequestFullscreen;
-      try { var p = req.call(stage); if (p && p.catch) p.catch(function () {}); } catch (e) {}
-    });
-  }
+  // 以前の play.html?id= のリンク用：上のバーを出さず、ゲームのページへそのまま移る
+  location.replace(url);
 })();
 </script>
 </body>
