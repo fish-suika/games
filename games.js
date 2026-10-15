@@ -11,8 +11,7 @@
     description: "ゲームの短い説明。",
     thumbnail: "thumbs/mygame.svg",   // 省略可
     url: "games/mygame/index.html",   // 相対パス or https://... 。空 "" だと「準備中」表示
-    mode: "embed",                    // "embed"=サイト内(play.html)で表示 / "external"=新しいタブで直接開く。省略時 embed
-    orientation: "landscape"          // "landscape" | "portrait" | 省略可
+    mode: "embed"                     // "embed"=サイト内(play.html)で表示 / "external"=新しいタブで直接開く。省略時 embed
   },
 
   ※ url は http(s) か相対パスのみ有効です（それ以外は準備中扱い）。
@@ -20,29 +19,99 @@
 */
 window.GAMES = [
   {
-    id: "sample",
-    title: "【仮】玉つぶしサンプル",
-    genre: "ミニゲーム",
-    description: "落ちてくる玉をクリック・タップで消す30秒スコアアタック。サイトの動作確認用の仮ゲームです。",
-    thumbnail: "thumbs/sample.svg",
-    url: "games/sample/index.html",
-    mode: "embed",
-    orientation: "portrait"
+    id: "moji-katanuki",
+    title: "文字型抜き",
+    genre: "2D・手さばき",
+    description: "砂糖菓子に刻まれた文字を、割らないように針で切り抜くゲーム。",
+    url: "https://fish-suika.github.io/moji-katanuki/",
+    mode: "embed"
   },
   {
-    id: "temp-b",
-    title: "【仮】仮ゲームB",
-    genre: "テスト",
-    description: "新しいタブで直接開く動作の確認用です。中身はサンプルと同じです。",
-    thumbnail: "thumbs/temp-b.svg",
-    url: "games/sample/index.html",
-    mode: "external"
+    id: "jelly-through",
+    title: "ゼリースルー",
+    genre: "3D・アクション",
+    description: "ゼリーを引っぱって形を変え、迫ってくるパネルの穴をくぐり抜ける。",
+    url: "https://fish-suika.github.io/jelly-through/",
+    mode: "embed"
   },
   {
-    id: "coming-soon",
-    title: "【仮】準備中の作品",
-    genre: "未定",
-    description: "公開準備中の作品の表示例です。",
-    url: ""
+    id: "folded-world",
+    title: "カミと折り目の世界",
+    genre: "3D・横スクロール",
+    description: "紙の生き物になって、紙の世界を折り目で折り返し、道を作って進む。",
+    url: "https://fish-suika.github.io/folded-world/",
+    mode: "embed"
+  },
+  {
+    id: "sorting-center",
+    title: "荷物仕分けセンター",
+    genre: "3D・仕分け",
+    description: "コンベアを流れてくる荷物を、通常と特殊に仕分けていく。",
+    url: "https://fish-suika.github.io/sorting-center/",
+    mode: "embed"
+  },
+  {
+    id: "dino-escape",
+    title: "DINO ESCAPE",
+    genre: "3D・アクション",
+    description: "恐竜に乗って、噴火した火山から逃げ切る。",
+    url: "https://fish-suika.github.io/dino-escape/",
+    mode: "embed"
+  },
+  {
+    id: "elevator",
+    title: "エレベーター係",
+    genre: "3D・バカゲー",
+    description: "ボタンを押すだけの仕事。なのに、客の注文がどんどん面倒になっていく。",
+    url: "https://fish-suika.github.io/elevator/",
+    mode: "embed"
+  },
+  {
+    id: "bullet-time",
+    title: "BULLET TIME",
+    genre: "3D・パズル",
+    description: "撃たれた銃弾になって、未来を書き換えるパズル。",
+    url: "https://fish-suika.github.io/bullet-time/",
+    mode: "embed"
+  },
+  {
+    id: "bakudan-volley",
+    title: "爆弾バレー",
+    genre: "3D・スポーツ",
+    description: "爆弾をボールにして打ち合う、ちょっと危ないバレーボール。",
+    url: "https://fish-suika.github.io/bakudan-volley/",
+    mode: "embed"
+  },
+  {
+    id: "santa",
+    title: "ハイジャンプ・デリバリー",
+    genre: "3D・アクション",
+    description: "ジャンプ力が高すぎるサンタになって、雪の夜の街にプレゼントを届ける。",
+    url: "https://fish-suika.github.io/santa/",
+    mode: "embed"
+  },
+  {
+    id: "disarm",
+    title: "DISARM",
+    genre: "パズル",
+    description: "配線・ダイヤル・レバーなどの仕掛けを、1つずつ外して爆弾を解除する。",
+    url: "https://fish-suika.github.io/disarm/",
+    mode: "embed"
+  },
+  {
+    id: "command",
+    title: "COMMAND",
+    genre: "スコアアタック",
+    description: "表示される矢印を、制限時間内にすばやく正確に入力する。",
+    url: "https://fish-suika.github.io/command/",
+    mode: "embed"
+  },
+  {
+    id: "kaerimichi",
+    title: "帰り道",
+    genre: "3D・ホラー",
+    description: "一人称で歩く3Dホラー。",
+    url: "https://fish-suika.github.io/kaerimichi/",
+    mode: "embed"
   }
 ];

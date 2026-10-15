@@ -64,6 +64,7 @@
   var timer = setTimeout(function () { $("fallback").classList.add("warn"); }, 8000);
   frame.addEventListener("load", function () {
     clearTimeout(timer);
+    try { frame.contentWindow.focus(); } catch (e) {} // キーボード操作のゲームがすぐ反応するように
     try { // 同一オリジンで中身が 404 っぽいときだけ検出（簡易）
       var t = (frame.contentDocument && frame.contentDocument.title) || "";
       if (/404|not found|error response|見つかりません/i.test(t)) $("fallback").classList.add("warn");
