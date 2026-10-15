@@ -23,6 +23,7 @@ window.GAMES = [
     title: "文字型抜き",
     genre: "2D・手さばき",
     description: "砂糖菓子に刻まれた文字を、割らないように針で切り抜くゲーム。",
+    thumbnail: "thumbs/moji-katanuki.jpg",
     url: "https://fish-suika.github.io/moji-katanuki/",
     mode: "embed"
   },
@@ -31,6 +32,7 @@ window.GAMES = [
     title: "ゼリースルー",
     genre: "3D・アクション",
     description: "ゼリーを引っぱって形を変え、迫ってくるパネルの穴をくぐり抜ける。",
+    thumbnail: "thumbs/jelly-through.jpg",
     url: "https://fish-suika.github.io/jelly-through/",
     mode: "embed"
   },
@@ -39,6 +41,7 @@ window.GAMES = [
     title: "カミと折り目の世界",
     genre: "3D・横スクロール",
     description: "紙の生き物になって、紙の世界を折り目で折り返し、道を作って進む。",
+    thumbnail: "thumbs/folded-world.jpg",
     url: "https://fish-suika.github.io/folded-world/",
     mode: "embed"
   },
@@ -47,6 +50,7 @@ window.GAMES = [
     title: "荷物仕分けセンター",
     genre: "3D・仕分け",
     description: "コンベアを流れてくる荷物を、通常と特殊に仕分けていく。",
+    thumbnail: "thumbs/sorting-center.jpg",
     url: "https://fish-suika.github.io/sorting-center/",
     mode: "embed"
   },
@@ -55,6 +59,7 @@ window.GAMES = [
     title: "DINO ESCAPE",
     genre: "3D・アクション",
     description: "恐竜に乗って、噴火した火山から逃げ切る。",
+    thumbnail: "thumbs/dino-escape.jpg",
     url: "https://fish-suika.github.io/dino-escape/",
     mode: "embed"
   },
@@ -63,6 +68,7 @@ window.GAMES = [
     title: "エレベーター係",
     genre: "3D・バカゲー",
     description: "ボタンを押すだけの仕事。なのに、客の注文がどんどん面倒になっていく。",
+    thumbnail: "thumbs/elevator.jpg",
     url: "https://fish-suika.github.io/elevator/",
     mode: "embed"
   },
@@ -71,6 +77,7 @@ window.GAMES = [
     title: "BULLET TIME",
     genre: "3D・パズル",
     description: "撃たれた銃弾になって、未来を書き換えるパズル。",
+    thumbnail: "thumbs/bullet-time.jpg",
     url: "https://fish-suika.github.io/bullet-time/",
     mode: "embed"
   },
@@ -79,6 +86,7 @@ window.GAMES = [
     title: "爆弾バレー",
     genre: "3D・スポーツ",
     description: "爆弾をボールにして打ち合う、ちょっと危ないバレーボール。",
+    thumbnail: "thumbs/bakudan-volley.jpg",
     url: "https://fish-suika.github.io/bakudan-volley/",
     mode: "embed"
   },
@@ -87,6 +95,7 @@ window.GAMES = [
     title: "ハイジャンプ・デリバリー",
     genre: "3D・アクション",
     description: "ジャンプ力が高すぎるサンタになって、雪の夜の街にプレゼントを届ける。",
+    thumbnail: "thumbs/santa.jpg",
     url: "https://fish-suika.github.io/santa/",
     mode: "embed"
   },
@@ -95,6 +104,7 @@ window.GAMES = [
     title: "DISARM",
     genre: "パズル",
     description: "配線・ダイヤル・レバーなどの仕掛けを、1つずつ外して爆弾を解除する。",
+    thumbnail: "thumbs/disarm.jpg",
     url: "https://fish-suika.github.io/disarm/",
     mode: "embed"
   },
@@ -103,6 +113,7 @@ window.GAMES = [
     title: "COMMAND",
     genre: "スコアアタック",
     description: "表示される矢印を、制限時間内にすばやく正確に入力する。",
+    thumbnail: "thumbs/command.jpg",
     url: "https://fish-suika.github.io/command/",
     mode: "embed"
   },
@@ -111,6 +122,7 @@ window.GAMES = [
     title: "帰り道",
     genre: "3D・ホラー",
     description: "一人称で歩く3Dホラー。",
+    thumbnail: "thumbs/kaerimichi.jpg",
     url: "https://fish-suika.github.io/kaerimichi/",
     mode: "embed"
   }
