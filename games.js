@@ -19,6 +19,15 @@
 */
 window.GAMES = [
   {
+    id: "mosquito",
+    title: "蚊のステルスゲーム",
+    genre: "3D・ステルス",
+    description: "蚊になって、眠る人間に見つからないように血を吸う。PC向け（キーボード＋マウス）。",
+    thumbnail: "thumbs/mosquito.jpg",
+    url: "https://fish-suika.github.io/mosquito/",
+    mode: "embed"
+  },
+  {
     id: "moji-katanuki",
     title: "文字型抜き",
     genre: "2D・手さばき",
