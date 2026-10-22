@@ -19,6 +19,15 @@
 */
 window.GAMES = [
   {
+    id: "mado-hitofude",
+    title: "窓の向こうに、ひと筆。",
+    genre: "2D・癒やし",
+    description: "走る車の曇った窓に、指で絵や文字を描く。描いた跡は、少しずつ曇りに戻っていく。スマホの縦画面でも遊べる。",
+    thumbnail: "thumbs/mado-hitofude.png",
+    url: "https://fish-suika.github.io/mado-hitofude/",
+    mode: "embed"
+  },
+  {
     id: "mosquito",
     title: "蚊のステルスゲーム",
     genre: "3D・ステルス",
