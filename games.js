@@ -19,6 +19,15 @@
 */
 window.GAMES = [
   {
+    id: "tablecloth-pull",
+    title: "テーブルクロス名人",
+    genre: "3D・1スワイプ",
+    description: "ちょうどいい速さでテーブルクロスを引き抜く。遅いと引きずり、速いと跳ねる。載る物はだんだん大げさに。スマホの縦画面でも遊べる。",
+    thumbnail: "thumbs/tablecloth-pull.jpg",
+    url: "https://fish-suika.github.io/tablecloth-pull/",
+    mode: "embed"
+  },
+  {
     id: "mado-hitofude",
     title: "窓の向こうに、ひと筆。",
     genre: "2D・癒やし",
