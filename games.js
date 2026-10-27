@@ -19,6 +19,15 @@
 */
 window.GAMES = [
   {
+    id: "mole-tease",
+    title: "叩かれないモグラ",
+    genre: "3D・からかい",
+    description: "モグラ叩きを、モグラ側で。押している間だけ顔を出し、ハンマーが来る直前に引っ込んで空振りさせる。ムキになった人間はだんだん大げさに。スマホの縦画面でも遊べる。",
+    thumbnail: "thumbs/mole-tease.jpg",
+    url: "https://fish-suika.github.io/mole-tease/",
+    mode: "embed"
+  },
+  {
     id: "tablecloth-pull",
     title: "テーブルクロス名人",
     genre: "3D・1スワイプ",
