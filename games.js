@@ -19,6 +19,15 @@
 */
 window.GAMES = [
   {
+    id: "dolphin-show",
+    title: "本日の主役はイルカです",
+    genre: "3D・イルカショー",
+    description: "イルカショーの主役のイルカになる。深く潜って勢いを溜め、水面を割って大ジャンプ。トレーナーの合図どおりに演目をこなして、客席を沸かせよう。スマホの縦画面でも遊べる。",
+    thumbnail: "thumbs/dolphin-show.jpg",
+    url: "https://fish-suika.github.io/dolphin-show/",
+    mode: "embed"
+  },
+  {
     id: "mole-tease",
     title: "叩かれないモグラ",
     genre: "3D・からかい",
