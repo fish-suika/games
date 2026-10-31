@@ -9,18 +9,21 @@
 </head>
 <body>
 <header class="site-header">
-  <div class="wrap"><h1 class="site-title"><a href="index.html">AIゲーム実験室のゲーム置き場</a></h1></div>
+  <div class="wrap">
+    <h1 class="site-title"><a href="index.html">AIゲーム実験室のゲーム置き場</a></h1>
+    <p class="site-meta">公開中の実験 <span id="count">-</span>件</p>
+  </div>
 </header>
 <main class="wrap">
   <section class="intro">
-    <h2>ようこそ</h2>
-    <p class="lead" data-wrap>AIゲーム実験室が作った小さなブラウザゲームを置いています。インストール不要で、気になるものを気軽に遊んでみてください。</p>
+    <p class="lead" data-wrap>AIでどんなゲームが作れるのか。試した結果を、実験記録として並べています。インストールは不要です。気になるものがあれば、遊んでみてください。</p>
   </section>
   <ul class="grid" id="list" aria-label="ゲーム一覧"></ul>
-  <div class="empty" id="empty" hidden>まだ作品がありません。公開までもう少しお待ちください。</div>
+  <div class="empty" id="empty" hidden>公開できる実験記録がまだありません。もう少しお待ちください。</div>
 </main>
 <footer class="site-footer">
   <div class="wrap">
+    <p class="footer-head">実験室の決まりごと</p>
     <ul class="footer-links">
       <li><a href="terms.html">利用上の注意</a></li>
       <li><a href="license.html">著作権・ライセンス</a></li>
@@ -87,17 +90,27 @@
     return a;
   }
 
-  function card(g) {
+  function field(dl, name, value) {
+    dl.appendChild(el("dt", "", name));
+    var dd = el("dd");
+    dd.appendChild(window.wrapPhrases(value));
+    dl.appendChild(dd);
+  }
+
+  function card(g, no) {
     var li = el("li", "card");
+    li.appendChild(el("div", "card-top", "実験 No." + (no < 10 ? "0" : "") + no));
     li.appendChild(thumb(g));
     var body = el("div", "card-body");
-    var h = el("h3", "card-title", String(g.title || "（無題）"));
-    h.title = h.textContent;
+    var title = String(g.title || "（無題）");
+    var h = el("h3", "card-title");
+    h.appendChild(window.wrapPhrases(title));
+    h.title = title;
     body.appendChild(h);
-    body.appendChild(el("span", "genre", String(g.genre || "")));
-    var d = el("p", "desc");
-    d.appendChild(window.wrapPhrases(g.description || ""));
-    body.appendChild(d);
+    var dl = el("dl", "rec-table");
+    field(dl, "分類", String(g.genre || ""));
+    field(dl, "実験内容", g.description || "");
+    body.appendChild(dl);
     body.appendChild(playButton(g));
     li.appendChild(body);
     return li;
@@ -106,7 +119,9 @@
   try {
     var games = window.getGames().filter(function (g) { return g && typeof g === "object"; });
     if (!games.length) throw new Error("empty");
-    games.forEach(function (g) { list.appendChild(card(g)); });
+    // 新しい作品が先頭なので、末尾が No.01、先頭が最大
+    games.forEach(function (g, i) { list.appendChild(card(g, games.length - i)); });
+    document.getElementById("count").textContent = games.length;
   } catch (e) {
     list.hidden = true;
     empty.hidden = false;
