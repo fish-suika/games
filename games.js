@@ -19,6 +19,15 @@
 */
 window.GAMES = [
   {
+    id: "broom-balance",
+    title: "ほうき立て",
+    genre: "2D・バランス",
+    description: "掃除の時間、手のひらにほうきを立てる。指をドラッグして真下に手を入れ続け、風やぶつかる友だち、飛んでくる黒板消しをしのいで、60秒のチャイムまで落とさない。立て直すと教室が沸く。スマホの縦画面でも遊べる。",
+    thumbnail: "thumbs/broom-balance.jpg",
+    url: "https://fish-suika.github.io/broom-balance/",
+    mode: "embed"
+  },
+  {
     id: "dolphin-show",
     title: "本日の主役はイルカです",
     genre: "3D・イルカショー",
