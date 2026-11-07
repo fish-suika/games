@@ -19,6 +19,15 @@
 */
 window.GAMES = [
   {
+    id: "death-simulator",
+    title: "死亡シミュレーター",
+    genre: "2D・図鑑",
+    description: "「死ぬ」を押すと、現実のまれな死に方がランダムに流れる。年間の死者数と「防ぐには」つき。13枚の図鑑を全部集めよう。",
+    thumbnail: "thumbs/death-simulator.jpg",
+    url: "https://fish-suika.github.io/death-simulator/",
+    mode: "embed"
+  },
+  {
     id: "broom-balance",
     title: "ほうき立て",
     genre: "2D・バランス",
