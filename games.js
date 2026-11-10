@@ -19,6 +19,15 @@
 */
 window.GAMES = [
   {
+    id: "okashi-halloween",
+    title: "お菓子を食べ続けないと死ぬゲーム",
+    genre: "2D・ランナー",
+    description: "ハロウィンの夜を走る子どもは、お菓子を勝手に食べ続ける。切れたらお化けにイタズラされる！ 指を左右に動かしてお菓子を拾い、カボチャ・おばけ・魔女をよけて、朝までお菓子を切らさず生き延びよう。スマホの縦画面で遊べる。",
+    thumbnail: "thumbs/okashi-halloween.jpg",
+    url: "https://fish-suika.github.io/okashi-halloween/",
+    mode: "embed"
+  },
+  {
     id: "hanpuku-yokotobi",
     title: "分身反復横とび",
     genre: "2D・体力測定",
