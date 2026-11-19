@@ -60,6 +60,8 @@ a:focus-visible, button:focus-visible {
 .footer-links { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 0 0 12px; padding: 0; list-style: none; }
 .footer-links a { white-space: nowrap; }
 .copy { margin: 0; }
+.support { margin: 0 0 18px; }
+.support a { white-space: nowrap; }
 
 /* トップ */
 .intro { padding: 40px 0 24px; }
