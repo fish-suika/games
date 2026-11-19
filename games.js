@@ -19,6 +19,15 @@
 */
 window.GAMES = [
   {
+    id: "tataite-kabutte",
+    title: "叩いて被って五人抜き",
+    genre: "2D・反射神経",
+    description: "町内の叩いて被ってジャンケンポン大会に出場！ グー・チョキ・パーを選んで勝負し、勝ったらハンマー、負けたらヘルメットを相手より速くタップ。負けてハンマーを取ったら反則。相手のクセを読んで、5人勝ち抜けば優勝。スマホの縦画面で遊べる。",
+    thumbnail: "thumbs/tataite-kabutte.jpg",
+    url: "https://fish-suika.github.io/tataite-kabutte/",
+    mode: "embed"
+  },
+  {
     id: "okashi-halloween",
     title: "お菓子を食べ続けないと死ぬゲーム",
     genre: "2D・ランナー",
