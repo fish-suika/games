@@ -19,6 +19,15 @@
 */
 window.GAMES = [
   {
+    id: "kawarawari",
+    title: "割りすぎ瓦割り",
+    genre: "2D・連打",
+    description: "昇段審査の瓦割り。5秒間とにかく連打して気合をためたら、あとは一撃。力が強すぎると、瓦だけでなく道場、町、山、そして……どこまで割れるかは連打しだい。結果は段位認定証（または破門状）で。スマホの縦画面で遊べる。",
+    thumbnail: "thumbs/kawarawari.jpg",
+    url: "https://fish-suika.github.io/kawarawari/",
+    mode: "embed"
+  },
+  {
     id: "tataite-kabutte",
     title: "叩いて被って五人抜き",
     genre: "2D・反射神経",
