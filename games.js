@@ -49,7 +49,7 @@ window.GAMES = [
     id: "hanpuku-yokotobi",
     title: "分身反復横とび",
     genre: "2D・体力測定",
-    description: "体力測定の反復横とびを、速く跳びすぎて分身する。画面の左右をタップして、右・左・左・右の順に20秒。速く正確に跳ぶほど分身が増え、記録係が全員数えて記録がふくらむ。スマホの縦画面で遊べる。",
+    description: "体力測定の反復横とびを、速く跳びすぎて分身する。画面の左右をタップして、右・左・左・右の順に20秒。分身するほど記録がふくらみ、引換券で強くなって、クラスの体力測定から宇宙大会まで9つの大会を勝ち上がる。スマホの縦画面でもパソコンでも遊べる。",
     thumbnail: "thumbs/hanpuku-yokotobi.jpg",
     url: "https://fish-suika.github.io/hanpuku-yokotobi/",
     mode: "embed"
